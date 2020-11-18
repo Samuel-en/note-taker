@@ -2,14 +2,14 @@
 const path = require("path");
 
  module.exports = (app) => {
-        // Routes to view
+// Routes to view
       
-      //  View the notes page 
-        app.get("/notes", (req, res) => {
-          res.sendFile(path.join(__dirname, "../public/notes.html"));
+//  View the notes page 
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
         });
-      // If no matching route is found default to home
-        app.get("*", (req, res) => {
-          res.sendFile(path.join(__dirname, "../public/index.html"));
-        });
-      };
+// If no matching route is found default to home
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+     });
+       };

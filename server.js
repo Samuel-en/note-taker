@@ -21,3 +21,8 @@ app.use(express.static(path.join(__dirname, "public")));
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
+
+// Listener
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });

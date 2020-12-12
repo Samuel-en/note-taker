@@ -27,4 +27,21 @@ module.exports = (app) => {
           })
           .catch((err) => console.error(err));
       });
+      app.delete("/api/notes/:id", (req, res) => {
+        // Once note is deleted, it will disappear from the notes list
+       readFile("./db/db.json", (error , data) => {
+         let db = JSON.parse(data);
+        let newNote = db.filter((note) => note.id != req.params.id);
+        console.log(newNote);
+        const updateNote = newNote;
+        writeFileSync("./db/db.json", JSON.stringify(updateNote))
+          .then(() => {
+            res.json(updateNote);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+       });
+        
+      });
     };

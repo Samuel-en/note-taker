@@ -2,7 +2,7 @@
 const path = require("path");
 
  module.exports = (app) => {
-// Routes to view
+
       
 //  View the notes page 
 app.get("/notes", (req, res) => {

@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // routers 
 
 require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/viewRoutes")(app);
 
 
 // Listener

@@ -5,9 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const { urlencoded } = require('body-parser');
 
-// express instance 
+// Create an instance of express
 const app = express();
-
 // port 
 const PORT = process.env.PORT || 8080;
 

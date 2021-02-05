@@ -9,9 +9,9 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // middleware code
-app.use(express,urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "publicFrontend")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // routers 
 
@@ -19,7 +19,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/viewsRoutes")(app);
 
 
-// Listener
+// Listen
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });

@@ -1,9 +1,10 @@
-const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const util = require("util");
+const db = require("../db/db.json");
 const { v4: uuidv4 } = require('uuid');
-const writeFileAsync = util.promisify(fs.writeFile);
+const writeFileSync = util.promisify(fs.writeFile);
+const readFile = fs.readFile;
 
 module.exports = (app) => {
     // API Routes

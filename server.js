@@ -2,7 +2,6 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const { urlencoded } = require('body-parser');
 
 // Create an instance of express
 const app = express();
@@ -12,12 +11,12 @@ const PORT = process.env.PORT || 8080;
 // middleware code
 app.use(express,urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "publicFrontend")));
 
 // routers 
 
-require("./routes/api-routes")(app);
-require("./routes/views-route")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/viewsRoutes")(app);
 
 
 // Listener
